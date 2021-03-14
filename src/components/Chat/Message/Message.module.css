@@ -1,0 +1,51 @@
+.messageWrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5rem;
+}
+
+.messageWrapper.mine {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 1.5rem;
+}
+
+.messageSenderAvatar {
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+}
+
+.messageSendInfo.mine {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.messageSendInfo {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.messageText.mine {
+    padding: .5rem;
+    margin-right: .5rem;
+    background-color: #ddd;
+    border-radius: 15px;
+    order: 0;
+}
+
+.messageText {
+    order: 2;
+    padding: .5rem;
+    margin-left: .5rem;
+    background-color: #ddd;
+    border-radius: 15px;
+}
+
+.senderMetadata {
+    font-size: .85rem;
+    color: #888;
+}

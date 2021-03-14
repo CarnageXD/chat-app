@@ -1,0 +1,80 @@
+.chatWrapper {
+    height: 100%;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messagesWrapper {
+    padding: 1rem 2rem;
+    height: 100%;
+    width: 100vw;
+    overflow:scroll;
+}
+
+.messagesWrapper::-webkit-scrollbar {
+    width: .2rem;
+}
+
+.messagesWrapper::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 15px;
+}
+
+.messageDate {
+    color: #aaa;
+}
+
+.messageInputBlock {
+    position: relative;    
+}
+
+.messageInputField {
+    padding: 8px 9px;
+    width: 80vw;
+    line-height: 18px;
+    height: 2.3rem;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    resize: none;
+}
+
+.messageInputField:focus { 
+    outline: 0;
+}
+
+.messageInputButton {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    padding-left: .5rem;
+    color: #22a679;    
+}
+
+.messageInputButton:focus {
+    outline: none;
+}
+
+@media (min-width: 767px) {
+    .messageInputField {
+        width: 75vw;        
+    }
+    .messagesWrapper {
+        width: 80vw;
+    }
+}
+
+@media (min-width: 991px) {
+    .messagesWrapper {
+        width: 55vw;
+    }
+    .messageInputField {
+        width: 50vw;
+    }
+}

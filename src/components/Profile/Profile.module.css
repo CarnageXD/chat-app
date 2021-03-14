@@ -1,0 +1,90 @@
+.profileWrapper {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5rem 0;
+}
+
+.circle {
+    height: 125px;
+    width: 125px;
+    background-color: #EBFFF3;
+    border-radius: 50%;
+    border: 1px solid #70D4B0;
+    margin-bottom: 1.5rem;
+}
+
+.authStatus {
+    font-size: 1.5rem;
+}
+
+.authBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.authButton, .enterChatButton, .logoutButton {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: #EBFFF3;
+    border-radius: 15px;
+    border: 1px solid #70D4B0;
+    width: 80vw;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.suggestEnterChat {
+    font-size: 1.5rem;
+}
+
+.enterChatButton {
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+}
+
+.authButton:hover, .enterChatButton:hover {
+    color:white;
+    background-color: #70D4B0;
+    border: 1px solid #EBFFF3;;
+}
+
+.authButton:focus, .enterChatButton:focus {
+    outline: 0;
+}
+
+.logoutButton {
+    height: 30px;
+    width: 90px;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.logoutButton:hover {
+    color:white;
+    background-color: #eb6060;
+    border: 1px solid #EBFFF3;;
+}
+
+@media (min-width: 767px) {
+    .authButton {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 991px) {
+    .authButton {
+        width: 30vw;
+    }
+}

@@ -1,0 +1,19 @@
+.footerWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedbackSuggest {
+    color: #999;
+}
+
+.feedbackEmail {
+    cursor: pointer;
+    font-size: 1.2rem;
+}

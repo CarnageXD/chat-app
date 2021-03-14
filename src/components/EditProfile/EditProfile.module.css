@@ -1,0 +1,61 @@
+.signupWrapper {
+    height: 100%;
+}
+
+form {    
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+.inputItem {
+    padding: .7rem;
+    border: 2px solid #70D4B0;
+}
+
+input[type=file] {
+    padding-left: 1.5rem;
+    border: 0;
+}
+
+label {
+    margin-bottom: 1rem;
+}
+
+.suggestContinue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.continueButton {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: #EBFFF3;
+    border-radius: 15px;
+    border: 1px solid #70D4B0;
+    width: 30vw;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+
+.continueButton:hover {
+    color:white;
+    background-color: #70D4B0;
+    border: 1px solid #EBFFF3;;
+}
+
+.continueButton:focus {
+    outline: 0;
+}
