@@ -1,7 +1,9 @@
 import React from 'react'
+import Preloader from '../../common/Preloader'
 import s from './Message.module.css'
 
 const Message = (props) => {
+    if (props.createdAt === null) return ''
     return (
         <div className={`${s.messageWrapper} ${props.userId === props.currentUser ? s.mine : ``}`}>
             <div className={`${s.messageSendInfo} ${props.userId === props.currentUser ? s.mine : ``}`}>
@@ -10,7 +12,7 @@ const Message = (props) => {
                     <img className={s.messageSenderAvatar} src={props.userAvatar}></img>
                 </div>
             </div>
-            <div className={s.senderMetadata}>{props.username} - 9:38AM</div>
+            <div className={s.senderMetadata}>{props.username} - {props.createdAt.toDate().toString().slice(16, 25)}</div>
         </div >
     )
 }

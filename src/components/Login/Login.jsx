@@ -30,7 +30,10 @@ class Login extends React.Component {
                             this.props.handleSignin(this.props.email, this.props.password)
                         }}>Log in</button>
                         <span>or</span>
-                        <button>Log in with Google</button>
+                        <button onClick={(e) => {
+                            e.preventDefault()
+                            alert('This feature has not been developed yet, please try again later')
+                        }}>Log in with Google</button>
                     </div>
                 </form>
             </div>

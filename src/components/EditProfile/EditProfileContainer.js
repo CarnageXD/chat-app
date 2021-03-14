@@ -5,7 +5,6 @@ import { Redirect } from 'react-router-dom'
 import EditProfile from './EditProfile'
 import { setUserProfile, updateUsernameText, updateUserAvatar, toggleIsFetching } from '../../redux/auth-reducer'
 import { compose } from 'redux'
-import { withAuthRedirect } from '../../hoc/withAuthRedirect'
 import Preloader from '../common/Preloader'
 
 

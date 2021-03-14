@@ -19,7 +19,7 @@ const Profile = (props) => {
                     <>
                         <div className={s.user}>
                             <div >
-                                <img className={s.circle} src={props.userAvatar} alt="" />
+                                <NavLink to='/editProfile'><img className={s.circle} src={props.userAvatar} alt="" /></NavLink>
                             </div>
                             <div className={s.authStatus}>Welcome, {props.username}</div>
                             <button className={s.logoutButton} onClick={e => { handleLogout(e) }}>Logout</button>

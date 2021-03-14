@@ -18,6 +18,7 @@ let initState = {
     userAvatar: null,
     currentUser: null,
     isAuth: false,
+    createdAt: '',
     isFetching: false,
     text: '',
     messages: [],
