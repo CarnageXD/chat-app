@@ -20,12 +20,11 @@ const Chat = (props) => {
 
     return (
         <div className={s.chatWrapper}>
-            <div className={s.messageDate}>Today</div>
             <div className={s.messagesWrapper} ref={messageEl}>
                 {
                     props.isLoading ?
                         <Preloader /> :
-                        props.messages.map(message => <Message {...message} currentUser={props.currentUser} />)
+                        props.messages.map((message,index) => <Message key={index} {...message} currentUser={props.currentUser} />)
                 }
             </div>
             <div className={s.messageInputBlock}>

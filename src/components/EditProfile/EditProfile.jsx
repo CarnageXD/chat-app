@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink, Redirect } from 'react-router-dom'
 import s from './EditProfile.module.css'
 
 class EditProfile extends React.Component {

@@ -1,81 +1,82 @@
 .chatWrapper {
-    height: 100%;
-    color: #444;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+  height: 100%;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .messagesWrapper {
-    padding: 1rem 2rem;
-    height: 100%;
-    width: 100vw;
-    overflow:scroll;
+  padding: 1rem 2rem;
+  height: 100%;
+  width: 100vw;
+  overflow: scroll;
 }
 
 .messagesWrapper::-webkit-scrollbar {
-    width: .2rem;
+  width: 0.2rem;
 }
 
 .messagesWrapper::-webkit-scrollbar-thumb {
-    background-color: gray;
-    border-radius: 15px;
+  background-color: gray;
+  border-radius: 15px;
 }
 
 .messageDate {
-    color: #aaa;
+  color: #aaa;
 }
 
 .messageInputBlock {
-    position: relative;    
+  position: relative;
 }
 
 .messageInputField {
-    padding: 8px 9px;
-    width: 80vw;
-    line-height: 18px;
-    max-height: 100%;
-    border-radius: 10px;
-    border: 1px solid #aaa;
-    resize: none;
-    padding-right: 2.5rem;
+  padding: 8px 9px;
+  width: 80vw;
+  line-height: 18px;
+  max-height: 100%;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+  resize: none;
+  padding-right: 2.5rem;
+  font-family: inherit;
 }
 
-.messageInputField:focus { 
-    outline: 0;
+.messageInputField:focus {
+  outline: 0;
 }
 
 .messageInputButton {
-    cursor: pointer;
-    position: absolute;
-    top: 12px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 1.5rem;
-    padding-left: .5rem;    
-    color: #22a679;    
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+  color: #22a679;
 }
 
 .messageInputButton:focus {
-    outline: none;
+  outline: none;
 }
 
 @media (min-width: 767px) {
-    .messageInputField {
-        width: 75vw;        
-    }
-    .messagesWrapper {
-        width: 80vw;
-    }
+  .messageInputField {
+    width: 75vw;
+  }
+  .messagesWrapper {
+    width: 80vw;
+  }
 }
 
 @media (min-width: 991px) {
-    .messagesWrapper {
-        width: 55vw;
-    }
-    .messageInputField {
-        width: 50vw;
-    }
+  .messagesWrapper {
+    width: 55vw;
+  }
+  .messageInputField {
+    width: 50vw;
+  }
 }

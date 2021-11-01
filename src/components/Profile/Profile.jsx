@@ -1,16 +1,9 @@
 import React from 'react'
 import s from './Profile.module.css'
-import circleAvatar from './../../assets/img/slidan.jpg'
 import { NavLink } from 'react-router-dom';
-import fire from './../../firebase/Fire'
 
 
 const Profile = (props) => {
-    const handleLogout = (e) => {
-        e.preventDefault()
-        fire.auth().signOut()
-    }
-    // if (!props.isAuth) return <Redirect to='/login' />    
     return (
         <div className={s.profileWrapper}>
             {
@@ -19,10 +12,15 @@ const Profile = (props) => {
                     <>
                         <div className={s.user}>
                             <div >
-                                <NavLink to='/editProfile'><img className={s.circle} src={props.userAvatar} alt="" /></NavLink>
+                                {
+                                    props.userAvatar === "null" ? 
+                                    <div className={s.circle}></div>
+                                    :
+                                    <img className={s.circle} src={props.userAvatar} alt="userAvatar" />
+                                }
                             </div>
                             <div className={s.authStatus}>Welcome, {props.username}</div>
-                            <button className={s.logoutButton} onClick={e => { handleLogout(e) }}>Logout</button>
+                            <button className={s.logoutButton} onClick={e => { props.handleLogout(e) }}>Logout</button>
                         </div>
                         <div className={s.authBlock}>
                             <span className={s.suggestEnterChat}>Enter the Groupchat</span>

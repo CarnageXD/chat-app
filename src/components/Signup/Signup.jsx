@@ -30,11 +30,6 @@ class Signup extends React.Component {
                             e.preventDefault()
                             this.props.handleSignup(this.props.email, this.props.password)
                         }}>Create account</button>
-                        <span>or</span>
-                        <button onClick={(e) => {
-                            e.preventDefault()
-                            alert('This feature has not been developed yet, please try again later')
-                        }}>Sign up with Google</button>
                     </div>
                 </form>
             </div>

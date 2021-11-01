@@ -1,5 +1,4 @@
 import React from 'react'
-import Preloader from '../../common/Preloader'
 import s from './Message.module.css'
 
 const Message = (props) => {
@@ -9,7 +8,12 @@ const Message = (props) => {
             <div className={`${s.messageSendInfo} ${props.userId === props.currentUser ? s.mine : ``}`}>
                 <div className={`${s.messageText} ${props.userId === props.currentUser ? s.mine : ``}`}>{props.text}</div>
                 <div className={s.messageSenderAvatarBlock}>
-                    <img className={s.messageSenderAvatar} src={props.userAvatar}></img>
+                    {
+                        props.userAvatar === "null" ?
+                        <div className={s.messageSenderAvatar}></div>
+                        :
+                        <img className={s.messageSenderAvatar} src={props.userAvatar} alt=""/>
+                    }
                 </div>
             </div>
             <div className={s.senderMetadata}>{props.username} - {props.createdAt.toDate().toString().slice(16, 25)}</div>
