@@ -30,6 +30,8 @@ All application powered by Firebase (auth features, storing users, users setting
 | Chat | &#10004; | Ability to chatting with others |
 | Logout | &#10004; | Ability to logout of current account |
 
+## Test it
+
 ### Live demo: https://chat-app-eb863.web.app/
 
 ### Experiment with the project:
