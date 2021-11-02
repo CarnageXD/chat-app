@@ -30,12 +30,15 @@ All application powered by Firebase (auth features, storing users, users setting
 | Chat | &#10004; | Ability to chatting with others |
 | Logout | &#10004; | Ability to logout of current account |
 
-### Live demo: https://chat-app-eb863.web.app/profile
+### Live demo: https://chat-app-eb863.web.app/
 
 ### Experiment with the project:
 `git clone https://github.com/CarnageXD/chat-app.git`
 <br/>
+`cd ./chat-app`
+<br/>
 `npm install`
 <br/>
+`npm run start`
+<br/>
 in your terminal
-
