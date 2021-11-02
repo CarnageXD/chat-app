@@ -1,4 +1,4 @@
-# WeatherEveryday!
+# Groupchat
 ### How does it look
 ![img](https://carnagexd.github.io/assets/img/groupchat.png)
 
