@@ -13,15 +13,18 @@ const Profile = (props) => {
                         <div className={s.user}>
                             <div >
                                 {
-                                    props.userAvatar === "null" ? 
+                                    props.userAvatar === "null" || props.userAvatar === null ? 
                                     <div className={s.circle}></div>
                                     :
-                                    <img className={s.circle} src={props.userAvatar} alt="userAvatar" />
+                                    <img className={s.circle} src={props.userAvatar} alt="" />
                                 }
                             </div>
-                            <div className={s.authStatus}>Welcome, {props.username}</div>
+                            <div className={s.authStatus}>Welcome, {props.username}
+                            <NavLink to='/editProfile'><span className={s.editProfile}>&#9881;&#65039;</span></NavLink>
+                            </div>
                             <button className={s.logoutButton} onClick={e => { props.handleLogout(e) }}>Logout</button>
                         </div>
+                        
                         <div className={s.authBlock}>
                             <span className={s.suggestEnterChat}>Enter the Groupchat</span>
                             <NavLink to='/chat'><button className={s.enterChatButton}>Go</button></NavLink>

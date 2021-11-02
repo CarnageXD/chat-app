@@ -24,6 +24,12 @@ form {
   border: 2px solid #70d4b0;
 }
 
+.inputError {
+  font-size: 1rem;
+  color: salmon;
+  text-align: center;
+}
+
 .loginButtons {
   margin-top: 2rem;
   display: flex;

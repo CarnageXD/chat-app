@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { setUserProfile } from "./../../redux/auth-reducer";
 import Profile from "./Profile";
 import fire from "../../firebase/Fire";
+import Preloader from "../common/Preloader";
 
 class ProfileContainer extends React.Component {
-  componentDidMount() {
+  getUserProfile() {
     const db = fire.firestore();
     db.collection("userProfile")
       .get()
@@ -22,10 +23,13 @@ class ProfileContainer extends React.Component {
       });
   }
 
+  componentDidMount() {
+    this.getUserProfile();
+  }
+
   componentDidUpdate() {
-    if (!this.props.isAuth) {
-      this.props.setUserProfile("noname", null);
-    }
+    debugger;
+    this.getUserProfile();
   }
 
   handleLogout = (e) => {

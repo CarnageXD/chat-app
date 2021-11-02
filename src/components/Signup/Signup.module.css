@@ -41,6 +41,12 @@ form {
   transition: all 0.3s linear;
 }
 
+.inputError {
+  font-size: 1rem;
+  text-align: center;
+  color: salmon;
+}
+
 @media (min-width: 991px) {
   .signupButtons > button {
     width: 120%;

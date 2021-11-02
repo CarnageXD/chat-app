@@ -20,10 +20,27 @@ class EditProfileContainer extends React.Component {
 
   setDataBaseProfileData = () => {
     const dbUserProfile = fire.firestore().collection("userProfile");
-    dbUserProfile.add({
-      username: `${this.props.username}`,
-      userId: `${this.props.currentUser}`,
-      userAvatar: `${this.props.userAvatar}`,
+    dbUserProfile.get().then((snapshot) => {
+      const data = snapshot.docs;
+      let exists = false;
+      data.forEach((doc) => {
+        console.log(this.props.currentUser);
+        console.log(doc.data().userId);
+        if (this.props.currentUser === doc.data().userId) {
+          exists = true;
+          dbUserProfile.doc(doc.id).update({
+            username: `${this.props.username}`,
+            userAvatar: `${this.props.userAvatar}`,
+          });
+        }
+      });
+      if (!exists) {
+        dbUserProfile.add({
+          username: `${this.props.username}`,
+          userId: `${this.props.currentUser}`,
+          userAvatar: `${this.props.userAvatar}`,
+        });
+      }
     });
     this.setState({ redirect: true });
   };
@@ -39,16 +56,12 @@ class EditProfileContainer extends React.Component {
     if (this.state.redirect) return <Redirect to="/profile" />;
     return (
       <>
-        {!this.props.isAuth ? (
-          <Redirect to="/login" /> && <Preloader />
-        ) : (
-          <EditProfile
-            onFileChange={this.onFileChange}
-            updateUsernameText={this.props.updateUsernameText}
-            setDataBaseProfileData={this.setDataBaseProfileData}
-            isAuth={this.props.isAuth}
-          />
-        )}
+        <EditProfile
+          onFileChange={this.onFileChange}
+          updateUsernameText={this.props.updateUsernameText}
+          setDataBaseProfileData={this.setDataBaseProfileData}
+          isAuth={this.props.isAuth}
+        />
       </>
     );
   }

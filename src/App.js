@@ -1,19 +1,22 @@
 import React from "react";
 import "./App.css";
-import { Route } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-import SignupContainer from "./components/Signup/SignupContainer";
-import LoginContainer from "./components/Login/LoginContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
-import ProfileContainer from "./components/Profile/ProfileContainer";
-import EditProfileContainer from "./components/EditProfile/EditProfileContainer";
 import fire from "./firebase/Fire";
 import { authStatus, updateCurrentUser } from "./redux/auth-reducer";
 import { connect } from "react-redux";
-import ChatContainer from "./components/Chat/ChatContainer";
+import { setRoutes } from "./routes/routes";
+import Preloader from "./components/common/Preloader";
 
 class App extends React.Component {
+  state = {
+    loading: false,
+  };
+
   componentDidMount() {
+    this.setState({
+      loading: true,
+    });
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
         this.props.authStatus(true);
@@ -36,23 +39,22 @@ class App extends React.Component {
             );
           }
         });
+      })
+      .then(() => {
+        this.setState({
+          loading: false,
+        });
       });
   }
-
   render() {
+    if (this.state.loading) return <Preloader />;
+    const routes = setRoutes(this.props.isAuth);
     return (
       <div className="App">
         <div className="appHeader">
           <HeaderContainer />
         </div>
-        <div className="appContent">
-          <Route path="/" exact render={() => <ProfileContainer />} />
-          <Route path="/signup" render={() => <SignupContainer />} />
-          <Route path="/login" render={() => <LoginContainer />} />
-          <Route path="/editProfile" render={() => <EditProfileContainer />} />
-          <Route path="/profile" render={() => <ProfileContainer />} />
-          <Route path="/chat" render={() => <ChatContainer />} />
-        </div>
+        <div className="appContent">{routes}</div>
         <div className="appFooter">
           <Footer />
         </div>

@@ -9,7 +9,7 @@ const Message = (props) => {
                 <div className={`${s.messageText} ${props.userId === props.currentUser ? s.mine : ``}`}>{props.text}</div>
                 <div className={s.messageSenderAvatarBlock}>
                     {
-                        props.userAvatar === "null" ?
+                        props.userAvatar === "null" || props.userAvatar === null ?
                         <div className={s.messageSenderAvatar}></div>
                         :
                         <img className={s.messageSenderAvatar} src={props.userAvatar} alt=""/>

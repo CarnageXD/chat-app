@@ -7,6 +7,8 @@ import {
   updateEmailText,
   updatePasswordText,
   submitAuthAction,
+  setAuthError,
+  clearAuthError,
 } from "../../redux/auth-reducer";
 import Login from "./Login";
 
@@ -26,8 +28,7 @@ class LoginContainer extends React.Component {
         this.props.submitAuthAction();
       })
       .catch((error) => {
-        // var errorCode = error.code;
-        // var errorMessage = error.message;
+        this.props.setAuthError(error.message);
       });
   };
 
@@ -41,6 +42,8 @@ class LoginContainer extends React.Component {
         handleSignin={this.handleSignin}
         updateEmailText={this.props.updateEmailText}
         updatePasswordText={this.props.updatePasswordText}
+        authError={this.props.authError}
+        clearAuthError={this.props.clearAuthError}
       />
     );
   }
@@ -50,6 +53,7 @@ const mapStateToProps = (state) => {
   return {
     email: state.auth.email,
     password: state.auth.password,
+    authError: state.auth.authError,
     isAuth: state.auth.isAuth,
   };
 };
@@ -59,4 +63,6 @@ export default connect(mapStateToProps, {
   authStatus,
   updateEmailText,
   updatePasswordText,
+  setAuthError,
+  clearAuthError,
 })(LoginContainer);
