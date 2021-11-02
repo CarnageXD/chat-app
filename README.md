@@ -33,7 +33,7 @@ All application powered by Firebase (auth features, storing users, users setting
 ### Live demo: https://chat-app-eb863.web.app/profile
 
 ### Experiment with the project:
-`git clone https://github.com/CarnageXD/weather-everyday.git`
+`git clone https://github.com/CarnageXD/chat-app.git`
 <br/>
 `npm install`
 <br/>
